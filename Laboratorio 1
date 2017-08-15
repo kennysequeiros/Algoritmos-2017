@@ -1,0 +1,24 @@
+// programa de sumatoria de numeros pares hasta N numero
+
+#include "stdafx.h"
+#include "stdio.h"
+#include "conio.h"
+#include <iostream>
+using namespace std;
+
+void main ()
+{int N,c,s;
+c=2;
+s=0;
+cout<<"introduzca el valor de N :";
+cin>>N;
+while(c<=N)
+   {
+    s=s+c;
+    c=c+2;
+   }
+cout<<"la sumatoria es :";
+cout<< s;
+cout<<endl;
+getch();
+}
