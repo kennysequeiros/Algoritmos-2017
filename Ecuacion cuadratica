@@ -1,0 +1,62 @@
+#include "stdafx.h"
+#include "conio.h"
+#include "stdlib.h"
+#include "math.h"
+#include <iostream>
+
+using namespace std;
+
+void ValA(float &A);
+float ValB();
+float ValC();
+void solucion(float&A,float&B,float&C,float&x1,float&x2);
+
+void main()
+{float a,b,c,x1,x2;
+ ValA(a);
+ b = ValB();
+ c = ValC();
+
+ solucion(a,b,c,x1,x2);
+ cout<<"\n\n "<<a<<"x^2 + "<<b<<"x + "<<c;
+ getch();
+}
+
+void ValA(float &A)
+{do
+   {cout<<"\n Ingrese coeficiente A:  ";
+    cin>>A;
+   }while(A == 0);
+}
+float ValB()
+{float b;
+ cout<<"\n Ingrese coeficiente B:  ";
+ cin>>b;
+ return b;
+}
+float ValC()
+{float c;
+ cout<<"\n Ingrese coeficiente C:  ";
+ cin>>c;
+ return c;
+}
+
+void solucion(float&A,float&B,float&C,float&x1,float&x2)
+{if((pow(B,2)-(4*A*C))<0)
+   {x1 = (-B)/(2*A);
+    x2 = (sqrt((pow(B,2)-(4*A*C))*(-1)))/(2*A);	   
+	cout<<"\n Soluciones Imaginarias x1 = "<<x1<<" X2 = "<<x2<<"i";
+   }
+else
+    {if((pow(B,2)-(4*A*C))==0)
+        {x1 = ((-1)*B/(2*A));
+         cout<<"\n una solucion: "<<x1;
+        }
+	else
+	    {x1 = (((-1)*B)+sqrt(pow(B,2)-(4*A*C)))/(2*A);
+         x2 = (((-1)*B)-sqrt(pow(B,2)-(4*A*C)))/(2*A);
+         cout<<"\n Dos soluciones x1 = "<<x1<<" X2 = "<<x2;
+        }
+    }
+}
+
