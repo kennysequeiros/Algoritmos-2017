@@ -1,15 +1,14 @@
 #include "stdafx.h"
-#include "conio.h"
-#include "stdlib.h"
-#include "math.h"
 #include <iostream>
+#include "conio.h"
+#include "math.h"
 
 using namespace std;
 
 void ValA(float &A);
 float ValB();
 float ValC();
-void solucion(float&A,float&B,float&C,float&x1,float&x2);
+void solucion(float A,float B,float C,float &x1,float &x2);
 
 void main()
 {float a,b,c,x1,x2;
@@ -41,7 +40,7 @@ float ValC()
  return c;
 }
 
-void solucion(float&A,float&B,float&C,float&x1,float&x2)
+void solucion(float A,float B,float C,float &x1,float &x2)
 {if((pow(B,2)-(4*A*C))<0)
    {x1 = (-B)/(2*A);
     x2 = (sqrt((pow(B,2)-(4*A*C))*(-1)))/(2*A);	   
