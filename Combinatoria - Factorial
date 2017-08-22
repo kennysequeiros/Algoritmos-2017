@@ -1,0 +1,70 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "stdlib.h"
+using namespace std;
+
+float factorial(float a);
+void combi(float x, float y, float r, float &comb);
+void validar(float &n, float &r);
+
+void main()
+{
+	float n, r, c, res;
+	cout << "Este programa resuelve la siguiente operacion: ";
+	cout << "\n";
+	cout << "\n";
+	cout << "                      n!";
+	cout << "\n";
+	cout << "    combi(n,r) = -------------        donde ! es la funcion factorial";
+	cout << "\n";
+	cout << "                   r! (n-r)!";
+	cout << "\n";
+	cout << "\n";
+	validar(n, r);
+	res = n - r;
+	combi(n, r, res, c);
+	cout << "el valor de combi es : " << c;
+
+
+
+	getch();
+}
+
+void validar(float &n, float &r)
+{
+	do
+	{
+		cout << "introduzca el valor de n: ";
+		cout << "\n";
+		cout << "el valor de n debe ser mayor a cero";
+		cout << "\n";
+		cout << ": ";
+		cin >> n;
+
+	} while (n <= 0);
+	do
+	{
+		cout << "introduzca el valor de r: ";
+		cout << "\n";
+		cout << "el valor de n debe ser mayor a cero y diferente de n y menor que n";
+		cout << "\n";
+		cout << ": ";
+		cin >> r;
+	} while (r <= 0 || r >= n);
+}
+
+float factorial(float a)
+{
+	int i, fac = 1;
+	for (i = 1; i <= a; i++)
+	{
+		fac = fac*i;
+	}
+	return fac;
+}
+
+void combi(float x, float y, float r, float &comb)
+{
+	comb = (factorial(x)) / ((factorial(y))*factorial(r));
+}
