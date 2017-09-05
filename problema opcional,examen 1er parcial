@@ -1,0 +1,57 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include <string>
+
+#define N 100
+
+using namespace std;
+
+void prom(int *V,int lim,float &m);
+void dif(string *nom,int *V,int lim,float m);
+
+void main()
+{int V[N],lim;
+ float m;
+ string nom[N];
+
+cout<<"ingrese limite"<<endl;
+cin>>lim;
+
+for(int i=0;i<lim;i++)
+{
+ getline(cin,nom[i]);
+ cin>>nom[i];
+}
+
+for(int i=0;i<lim;i++)
+{cin>>V[i];
+}
+
+
+cout<<"\n El prom es: "<<endl;
+prom(V,lim,m);
+
+cout<<m<<endl;
+
+dif(nom,V,lim,m);
+	getch();
+}
+
+void prom(int *V,int lim,float &m)
+{float s=0;
+	for(int i=0;i<lim;i++)
+       {s = s + V[i];
+       }
+
+	m = (s)/(lim);
+}
+
+void dif(string *nom,int *V,int lim,float m)
+{float dif=0;
+	
+	for(int i=0;i<lim;i++)
+       {dif = abs(m-V[i]);
+	    cout<<nom[i]<<" dif. es: "<<dif<<endl;
+       }
+}
