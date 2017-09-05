@@ -7,8 +7,8 @@
 
 using namespace std;
 
-void prom(int *V,int lim,float &m);
-void dif(string *nom,int *V,int lim,float m);
+void prom(int V[],int lim,float &m);
+void dif(string nom[],int V[],int lim,float m);
 
 void main()
 {int V[N],lim;
@@ -38,7 +38,7 @@ dif(nom,V,lim,m);
 	getch();
 }
 
-void prom(int *V,int lim,float &m)
+void prom(int V[],int lim,float &m)
 {float s=0;
 	for(int i=0;i<lim;i++)
        {s = s + V[i];
@@ -47,7 +47,7 @@ void prom(int *V,int lim,float &m)
 	m = (s)/(lim);
 }
 
-void dif(string *nom,int *V,int lim,float m)
+void dif(string nom[],int V[],int lim,float m)
 {float dif=0;
 	
 	for(int i=0;i<lim;i++)
